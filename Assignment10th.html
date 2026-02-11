@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f5f9;
+}
+
+.app{
+  max-width:500px;
+  margin:0 auto;
+  background:#fff;
+  min-height:100vh;
+}
+
+/* header */
+.header{
+  background:#cfc8e6;
+  padding:20px;
+}
+.header h1{
+  font-size:22px;
+}
+.header p{
+  font-size:14px;
+  opacity:0.8;
+}
+
+/* tabs */
+.tabs{
+  display:flex;
+  gap:10px;
+  padding:15px;
+  flex-wrap:wrap;
+}
+.tab{
+  padding:8px 14px;
+  border:1px solid #ccc;
+  border-radius:20px;
+  font-size:14px;
+  cursor:pointer;
+}
+.tab.active{
+  background:#4b3f72;
+  color:#fff;
+  border-color:#4b3f72;
+}
+
+/* list */
+.list{
+  padding:10px;
+}
+.item{
+  background:#f7f7f7;
+  padding:15px;
+  margin-bottom:10px;
+  border-radius:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+}
+.item:hover{
+  background:#ececec;
+}
+.arrow{
+  font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Chemistry</h1>
+    <p>Core</p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="showContent('modules', this)">Modules</div>
+    <div class="tab" onclick="showContent('assignments', this)">Assignments & Quizzes</div>
+    <div class="tab" onclick="showContent('notes', this)">Notes</div>
+    <div class="tab" onclick="showContent('info', this)">Info</div>
+  </div>
+
+  <!-- Dynamic Content -->
+  <div class="list" id="content"></div>
+
+</div>
+
+<script>
+function showContent(type, el){
+
+  document.querySelectorAll('.tab').forEach(tab=>{
+    tab.classList.remove('active');
+  });
+  el.classList.add('active');
+
+  const content = document.getElementById("content");
+
+  if(type === "modules"){
+    content.innerHTML = `
+      <div class="item">Module 1: Chemical Reactions and Equations(रासायनिक अभिक्रियाएँ एवं समीकरण) <span class="arrow">›</span></div>
+      <div class="item">Module 2: Acids, Bases and Salts(अम्ल, क्षार एवं लवण) <span class="arrow">›</span></div>
+      <div class="item">Module 3: Metals and Non-metals(धातु एवं अधातु) <span class="arrow">›</span></div>
+      <div class="item">Module 4: Carbon and its Compounds(कार्बन एवं उसके यौगिक) <span class="arrow">›</span></div>
+      <div class="item">Module 5: Life Processes(जीवन प्रक्रियाएँ) <span class="arrow">›</span></div>
+      <div class="item">Module 6: Control and Coordination(नियंत्रण एवं समन्वय) <span class="arrow">›</span></div>
+      <div class="item">Module 7: How do Organisms Reproduce(जीव जनन कैसे करते हैं) <span class="arrow">›</span></div>
+      <div class="item">Module 8: Heredity and Evolution(आनुवंशिकता एवं उत्क्रांति) <span class="arrow">›</span></div>
+      <div class="item">Module 9: Light – Reflection and Refraction(प्रकाश : परावर्तन एवं अपवर्तन) <span class="arrow">›</span></div>
+      <div class="item">Module 10: The Human Eye and the Colourful World(मानव नेत्र एवं रंग-बिरंगी दुनिया) <span class="arrow">›</span></div>
+      <div class="item">Module 11: Electricity(विद्युत) <span class="arrow">›</span></div>
+      <div class="item">Module 12: Magnetic Effects of Electric Current(विद्युत धारा के चुंबकीय प्रभाव) <span class="arrow">›</span></div>
+      <div class="item">Module 13: Sources of Energy(ऊर्जा के स्रोत) <span class="arrow">›</span></div>
+      <div class="item">Module 14: Our Environment(हमारा पर्यावरण) <span class="arrow">›</span></div>
+      <div class="item">Module 15: Management of Natural Resources(प्राकृतिक संसाधनों का प्रबंधन) <span class="arrow">›</span></div>
+      
+    `;
+  }
+
+  else if(type === "assignments"){
+  content.innerHTML = `
+    <div class="item">
+      <span>Module 1: Chemical Reactions and Equations</span>
+      <input type="file" onchange="uploadAssignment(this, 1)">
+    </div>
+
+    <div class="item">
+      <span>Module 2: Acids, Bases and Salts</span>
+      <input type="file" onchange="uploadAssignment(this, 2)">
+    </div>
+
+    <div class="item">
+      <span>Module 3: Metals and Non-metals</span>
+      <input type="file" onchange="uploadAssignment(this, 3)">
+    </div>
+
+    <div class="item">
+      <span>Module 4: Carbon and its Compounds</span>
+      <input type="file" onchange="uploadAssignment(this, 4)">
+    </div>
+
+    <div class="item">
+      <span>Module 5: Life Processes</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+
+    <div class="item">
+      <span>Module 6: Control and Coordination</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+
+    <div class="item">
+      <span>Module 7: How do Organisms Reproduce</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+
+    <div class="item">
+      <span>Module 8: Heredity and Evolution</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+
+    <div class="item">
+      <span>Module 9: Light – Reflection and Refraction</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+
+    <div class="item">
+      <span>Module 10: The Human Eye and the Colourful World</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+
+    <div class="item">
+      <span>Module 11: Electricity</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+
+    <div class="item">
+      <span>Module 12: Magnetic Effects of Electric Current</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+
+    <div class="item">
+      <span>Module 13: Sources of Energy</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+
+    <div class="item">
+      <span>Module 14: Our Environment</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+
+    <div class="item">
+      <span>Module 14: Management of Natural Resources</span>
+      <input type="file" onchange="uploadAssignment(this, 5)">
+    </div>
+  `;
+}
+
+  else if(type === "notes"){
+    content.innerHTML = `
+      <div class="item">Notes PDF – Unit 1 <span class="arrow">›</span></div>
+      <div class="item">Notes PDF – Unit 2 <span class="arrow">›</span></div>
+      <div class="item">Notes PDF – Unit 3 <span class="arrow">›</span></div>
+    `;
+  }
+
+  else if(type === "info"){
+    content.innerHTML = `
+      <div class="item">Subject: Chemistry</div>
+      <div class="item">Class: 10</div>
+      <div class="item">Board: UP Board</div>
+    `;
+  }
+}
+
+function uploadAssignment(input, moduleNo){
+  if(input.files.length > 0){
+    const fileName = input.files[0].name;
+    alert("Assignment uploaded for Module " + moduleNo + "\nFile: " + fileName);
+  }
+}
+
+
+/* default load */
+showContent('modules', document.querySelector('.tab'));
+</script>
+
+</body>
+</html>

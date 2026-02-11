@@ -1,0 +1,204 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body{
+  background: #f0f2f5;
+  color: #333;
+}
+
+/* HEADER */
+.header{
+  background: #27ae60;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.header h1{
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* CLASS INFO */
+.class-info{
+  background: #fff;
+  text-align: center;
+  padding: 12px 15px;
+  font-weight: 600;
+  margin: 15px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 16px;
+}
+
+/* DATE BOX */
+.date-box{
+  background: #fff;
+  margin: 15px 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.date-box label{
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.date-box input{
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* SAVE BUTTON */
+.date-box button{
+  background: #27ae60;
+  color: white;
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.date-box button:hover{
+  background: #219150;
+}
+
+/* TABLE CONTAINER */
+.student-list{
+  margin: 15px 10px;
+  overflow-x: auto;
+}
+
+/* TABLE */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td{
+  border: none;
+  padding: 12px;
+  text-align: center;
+}
+
+th{
+  background: #27ae60;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even){
+  background: #f9f9f9;
+}
+
+tr:hover{
+  background: #eafaf1;
+  transition: 0.3s;
+}
+
+/* BUTTONS IN TABLE */
+button{
+  padding: 6px 10px;
+  margin: 2px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+button.present-btn{
+  background: #27ae60;
+}
+
+button.present-btn:hover{
+  background: #219150;
+}
+
+button.absent-btn{
+  background: #e74c3c;
+}
+
+button.absent-btn:hover{
+  background: #c0392b;
+}
+
+/* ACTIVE BUTTON STATES */
+button.active.present-btn {
+  background: #2ecc71; /* bright green */
+  color: #fff;
+}
+
+button.active.absent-btn {
+  background: #e74c3c; /* red */
+  color: #fff;
+}
+
+/* STATUS TEXT */
+.status-text{
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width: 480px){
+  th, td{
+    padding: 8px;
+    font-size: 12px;
+  }
+  button{
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+  .date-box{
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+.search-box {
+    width: 90%;
+    max-width: 600px;
+    margin: 15px auto;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+

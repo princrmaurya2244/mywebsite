@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hindi - Class 11</title>
+  <link rel="stylesheet" href="hindiPdf.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Hindi - Class 11</h1>
+
+    <!-- Upload PDF (Teacher) -->
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <label class="upload-btn">
+        Upload PDF
+        <input type="file" name="hindi_pdf" onchange="this.form.submit()">
+      </label>
+    </form>
+
+    <!-- View PDF (Student) -->
+    <a href="pdf/hindi.pdf" target="_blank" class="view-btn">View PDF</a>
+
+    <!-- Assignment -->
+    <a href="assignments/hindi_assignment.pdf" target="_blank" class="view-btn">Assignment</a>
+
+    <!-- Back button -->
+    <a href="index.html" class="back-btn">&lt; Back to Subjects</a>
+  </div>
+
+</body>
+</html>

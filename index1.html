@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Login Page</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#f2f4f8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.login-container{
+    width:90%;
+    max-width:420px;
+    background:#fff;
+    border-radius:10px;
+    padding:30px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.logo img{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+}
+
+.role{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.input-box{
+    margin-bottom:15px;
+}
+
+.input-box input{
+    width:100%;
+    padding:15px;
+    border:1px solid #cfd8dc;
+    border-radius:6px;
+    background:#eef3fb;
+    font-size:16px;
+}
+
+.toggle-box{
+    display:flex;
+    gap:10px;
+    margin:15px 0;
+    font-size:14px;
+}
+
+.switch{
+    position:relative;
+    width:40px;
+    height:20px;
+}
+
+.switch input{display:none;}
+
+.slider{
+    position:absolute;
+    background:#ccc;
+    border-radius:20px;
+    inset:0;
+}
+
+.slider:before{
+    content:"";
+    position:absolute;
+    width:16px;
+    height:16px;
+    background:#fff;
+    border-radius:50%;
+    left:2px;
+    top:2px;
+}
+
+input:checked + .slider{
+    background:#4caf50;
+}
+
+input:checked + .slider:before{
+    transform:translateX(20px);
+}
+
+.links{
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.links a{
+    display:block;
+    color:#1a73e8;
+    text-decoration:none;
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    background:#4b2f45;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-size:17px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<form class="login-container" autocomplete="off">
+    <div class="logo">
+        <img src="https://images.timesnowhindi.com/photo/msid-107571278/107571278.jpg">
+    </div>
+
+    <div class="role">
+        <input type="radio" checked> Student / Parent
+    </div>
+
+    <div class="input-box">
+        <input type="text"
+               placeholder="User ID"
+               name="uid_987"
+               autocomplete="off">
+    </div>
+
+    <div class="input-box">
+        <input type="password"
+               placeholder="Password"
+               name="pwd_987"
+               autocomplete="new-password">
+    </div>
+
+    <div class="toggle-box">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+        Login To Online Test Portal
+    </div>
+
+    <div class="links">
+        <a href="#">Forgot Password?</a>
+        <a href="#">Signup (New User)</a>
+    </div>
+
+    <button class="login-btn" type="submit">Login »</button>
+</form>
+
+<script>
+/* FINAL GUARANTEE: clear any auto-filled value */
+window.onload = () => {
+    document.querySelectorAll("input").forEach(i => i.value = "");
+};
+</script>
+
+</body>
+</html>

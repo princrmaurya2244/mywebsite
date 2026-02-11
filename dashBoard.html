@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - School Portal</title>
+<link rel="stylesheet" href="dashBoard.css">
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+
+  <!-- LEFT SIDE -->
+  <div class="header-left">
+    <div class="school-info">
+      <img src="https://m.media-amazon.com/images/I/61RS+P2nJGL._AC_UF894,1000_QL80_.jpg" alt="School Logo" class="school-logo">
+      <span class="school-name">Gyan Jyoti Senior Secondary School</span>
+    </div>
+
+    <!-- Menu button BELOW logo -->
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="teacher-info">
+    <span class="teacher-name">Mr. Ramesh Maurya</span>
+    <div class="teacher-photo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcrKB5L8XC4_sFPyKJfufgZdxkyj_fAn4NDQ&s" alt="Teacher Photo" class="teacher-photo">
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <h2>Menu</h2>
+  <ul>
+    <li onclick="goToPage('dashboard.html')">Dashboard</li>
+    <li><a href="attendence.html" style="text-decoration:none; color:inherit;">Attendence</a></li>
+    <li onclick="location.href='course.html'">My Subjects</li>
+    <li onclick="location.href='fee.html'">Fee Status</li>
+    <li onclick="goToPage('index.html')">Logout</li>
+  </ul>
+</div>
+
+<!-- Main content -->
+<!-- Main content -->
+<div class="main">
+
+  <h1>Welcome Admin</h1>
+  <p class="welcome-text">This is your dashboard. Click the menu to navigate.</p>
+
+  <!-- DASHBOARD CARDS -->
+  <div class="dashboard-cards">
+
+    <div class="card">
+      <h3>Total Students</h3>
+      <p>94</p>
+    </div>
+
+    <div class="card">
+      <h3>Present Today</h3>
+      <p>0</p>
+    </div>
+
+    <div class="card">
+      <h3>Absent Today</h3>
+      <p>0</p>
+    </div>
+
+    <div class="card">
+      <h3>My Subjects</h3>
+      <p>Chemistry</p>
+    </div>
+
+  </div>
+
+  <!-- QUICK ACTIONS -->
+  <div class="quick-actions">
+    <button onclick="location.href='attendence.html'">Mark Attendance</button>
+    <button>Upload Assignment</button>
+    <button>View Report</button>
+  </div>
+
+</div>
+
+
+
+<!-- JS -->
+<script src="dashBoard.js"></script>
+</body>
+</html>
